@@ -1,21 +1,50 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import SearchBox from "./components/SearchBox.js";
 import './App.css';
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
-  }
-}
+const URL ="http://localhost:8082";
 
+class App extends Component {
+
+    constructor(props) {
+
+        super(props)
+        this.state = {
+            followers: [],
+            user: ""
+        }
+        this.search=this.search.bind(this);
+
+    };
+
+
+    componentWillMount(){
+        fetch(URL+"/getFollowers/john-guerra", {method: "GET", headers: {accept: "application/json"}}).then((res)=>{
+            if(res.ok)
+                return res.json();
+        }).then((followers)=>{
+
+            this.setState({
+                followers: followers
+            });
+        });
+    }
+    search(text){
+        this.setState({
+            user: text
+        })
+    }
+    render() {
+
+        return (
+            <div>
+              <h1>Followers</h1>
+              <div>
+                <SearchBox search ={this.search}/>
+                  {console.log(this.state.user)}
+              </div>
+            </div>
+        )
+    }
+}
 export default App;

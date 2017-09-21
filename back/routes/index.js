@@ -10,7 +10,7 @@ router.get('/getFollowers/:user', function(req, res, next) {
 
         username: req.params.user
     }, function(err, data) {
-        console.log(JSON.stringify(data));
+        res.json(data);
     });
 });
 
