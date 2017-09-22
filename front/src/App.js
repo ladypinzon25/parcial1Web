@@ -64,7 +64,7 @@ class App extends Component {
 
             });
             axios.post(URL + '/postBusquedas', {
-                usuario: this.state.user
+                usuario: usuario
             })
                 .then(function (response) {
                     console.log(response);
