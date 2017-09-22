@@ -1,0 +1,12 @@
+.follower{
+
+    display: inline-block;
+    text-align: center;
+    margin: 5px;
+    padding: 0;
+}
+.follower img{
+
+    max-height: 150px;
+    max-width: 150px;
+}

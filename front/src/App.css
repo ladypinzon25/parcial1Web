@@ -17,6 +17,13 @@
 .App-intro {
   font-size: large;
 }
+.followers h1{
+
+  text-align: center;
+  margin: 5%;
+  font-family: 'Wendy One', sans-serif;
+
+}
 
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
