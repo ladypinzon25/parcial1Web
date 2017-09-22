@@ -13,7 +13,7 @@ class List extends Component {
 
 
     render() {
-console.log(this.props.bus)
+
         return (
             <div className="list">
                 <h3>Busquedas recientes</h3>

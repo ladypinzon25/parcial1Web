@@ -53,7 +53,7 @@ class App extends Component {
                 historial: this.state.historial + " sigue a: " + usuario
             })
         }
-        console.log(this.state.historial)
+        
         fetch(URL + "/getFollowers/" + usuario, {method: "GET", headers: {accept: "application/json"}}).then((res) => {
             if (res.ok)
                 return res.json();
