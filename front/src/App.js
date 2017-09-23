@@ -6,7 +6,7 @@ import axios from "axios";
 import List from './components/List';
 import './App.css';
 
-const URL = "http://localhost:8082";
+const URL = "https://parcialwebfollowers.herokuapp.com";
 
 class App extends Component {
 
